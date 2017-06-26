@@ -1,6 +1,6 @@
 from check_404 import check_404
 
-urls = ['http://facebook.com', 'http://google.com']
+urls = ['http://facebook.com', 'http://google.com','http://facc.io','http://www.google.com/dsa']
 
 checker = check_404(urls)
 results = checker.get_results()

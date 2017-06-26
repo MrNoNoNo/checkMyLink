@@ -12,7 +12,16 @@ class check_404(object):
 	def check_url(self, url):
 		result = {}
 		result['url'] = url
-		result['code'] = urllib2.urlopen(url).getcode()
+		try:
+			result['code'] = urllib2.urlopen(url).getcode()
+		
+		except urllib2.URLError, e:
+			if hasattr(e, 'code'):
+				result['code'] = e.code
+			else:	
+				result['code'] = e
+
+
 		return result
 
 
